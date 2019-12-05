@@ -1,0 +1,18 @@
+.images{
+  position: absolute;
+  
+}
+
+.image img{
+  width: 100px;
+  margin: 25px;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid rgb(238, 186, 186);
+  transition: all 1s;
+}
+
+.image img:hover{
+  transform: scale(1.5);
+}
+

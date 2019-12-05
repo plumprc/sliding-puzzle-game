@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Puzzle Game</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="info">
+		<h2 class='tips'>Sliding Puzzle Game</h2>
+	        <div class='tips'>steps: <span id="step">0</span></div>
+	</div>
+	<div id="main">
+        <div id="block_0" class="block"><span class="order">0</span></div>
+        <div id="block_1" class="block"><span class="order">1</span></div>
+        <div id="block_2" class="block"><span class="order">2</span></div>
+        <div id="block_3" class="block"><span class="order">3</span></div>
+        <div id="block_4" class="block"><span class="order">4</span></div>
+        <div id="block_5" class="block"><span class="order">5</span></div>
+        <div id="block_6" class="block"><span class="order">6</span></div>
+        <div id="block_7" class="block"><span class="order">7</span></div>
+		<div id="block_8" class="block"><span class="order">8</span></div>
+    </div>
+	<div id="control">
+        <button id="change">Change</button>
+        <button id="shuffle">Shuffle</button>
+        <button id="showNum">ShowNum</button>
+        <button id="hint">Hint: A*</button>
+	</div>
+	<div id="success">
+        <div id="sus_tip">
+		    <h1>Congratulations !</h1>
+            <p>steps: <span id="suc_step">0</span></p>
+            <div id="sus_img">
+                    <a onclick="window.open('gallery.html')"></a>
+            </div>
+            <button id="successB">Play Again !</button>
+        </div>
+    </div>
+    <script src="js/aStar.js"></script>
+    <script src="js/puzzle.js"></script>
+</body>
+</html>

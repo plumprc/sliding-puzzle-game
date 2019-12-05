@@ -1,0 +1,165 @@
+body {
+	margin: 0px;
+	padding: 0px;
+  background: #f1f1f1;
+	font: bold 12px arial, helvetica, sans-serif;
+}
+
+#info {
+	height: 110px;
+}
+
+.tips {
+  text-align: center;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 35px;
+  color: rgb(175, 175, 175);
+}
+
+#main {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  margin: 20px auto;
+  border: 10px solid rgba(255, 255, 255, .5);
+  outline: 5px solid rgb(175, 175, 175);
+}
+
+#main .block {
+  width: 100px;
+  height: 100px;
+  border: .5px solid rgb(175, 175, 175);
+  background-image: url("../asset/tmp.jpg");
+  position: absolute;
+  left: 100px;
+  top: 100px;
+  right: 0px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#main .block > span {
+  text-align: center;
+  line-height: 100px;
+  font-size: 30px;
+  text-shadow: 5px 5px 5px #fff;
+  display: none;
+}
+
+#main .block:nth-child(1) {
+	background-position: 0 0;
+}
+
+#main .block:nth-child(2) {
+	background-position: -100px 0;
+}
+
+#main .block:nth-child(3) {
+	background-position: -200px 0;
+}
+
+#main .block:nth-child(4) {
+	background-position: 0 -100px;
+}
+
+#main .block:nth-child(5) {
+	background-position: -100px -100px;
+}
+
+#main .block:nth-child(6) {
+	background-position: -200px -100px;
+}
+
+#main .block:nth-child(7) {
+	background-position: 0 -200px;
+}
+
+#main .block:nth-child(8) {
+	background-position: -100px -200px;
+}
+
+#main .block:nth-child(9) {
+  background-position: -200px -200px;
+  cursor: help;
+  opacity: 0;
+  transition: .5s;
+}
+
+#control{
+  margin: 50px auto;
+  text-align: center;
+}
+
+button{
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  border: 1px solid #bbb;
+  overflow: visible;
+  font: bold 13px arial, helvetica, sans-serif;
+  border-radius: 5px;
+  background-color: #f1f1f1;
+  background-image: linear-gradient(top, rgba(255,255,255,1), rgba(255,255,255,0));
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .3);
+  color: #555;
+  text-shadow: 0 1px 0 rgba(255,255,255, .9);
+  transition: .2s ease-out;
+}
+
+button:hover{
+  background-color: rgb(255, 255, 255);
+  color: rgb(5, 42, 252);
+}
+
+button:active{
+  background: #e9e9e9;
+  position: relative;
+  top: 1px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .3) inset;
+}
+
+#success {
+  position: absolute;
+  display: none;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  /* 不透明度一定要写在里面，单独写 opacity 会导致 div 内部元素全部变透明 */
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+#sus_tip {
+  position: absolute;
+  top: 40px;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 24px;
+  line-height: 30px;
+}
+
+#sus_img {
+  background-image: url("../asset/tmp.jpg");
+  margin: 20px auto;
+  width: 300px;
+  height: 300px;
+  border: 20px solid rgb(238, 186, 186);
+  transition: all .5s;
+}
+
+#sus_img:hover{
+  transform: scale(1.1);
+}
+
+#sus_img > a {
+  display: block; 
+  width: 300px;
+  height: 300px;
+  cursor:pointer;
+  position: absolute;
+  padding: 0;
+  margin: 0 auto;
+  z-index: 9;
+}
