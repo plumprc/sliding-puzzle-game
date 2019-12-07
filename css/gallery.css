@@ -1,18 +1,15 @@
-.images{
+.images {
   position: absolute;
-  
 }
 
-.image img{
-  width: 100px;
+.image img {
+  width: 150px;
   margin: 25px;
-  display: flex;
-  flex-direction: column;
   border: 2px solid rgb(238, 186, 186);
   transition: all 1s;
 }
 
-.image img:hover{
+.image img:hover {
   transform: scale(1.5);
 }
 
