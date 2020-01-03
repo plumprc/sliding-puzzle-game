@@ -1,19 +1,128 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Gallery</title>
-    <link rel="stylesheet" href="css/gallery.css">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/gallery.css" >
+  <title>Gallery</title>
 </head>
 <body>
-    <div align="center"><img src="asset/header.png"></div>
-    <div class="image">
-        <img src="asset/tmp.jpg">
-        <img src="asset/tmp2.jpg">
-        <img src="asset/tmp3.jpg">
-        <img src="asset/tmp4.jpg">
+  <header>
+    <a href="index.html" >
+      <div align="center"><img src="asset/header.png"></div>
+    </a>
+  </header>
+
+  <div class="grid">
+    <a href="#id01">
+      <div class="img" style="background-image: url('asset/tmp.jpg');">
+        <div class="hint">
+          <h2>One Shot</h2>
+          <p>Nico!!</p>
+        </div>
+      </div>
+    </a>
+    <a href="#id02">
+      <div class="img" style="background-image: url('asset/tmp2.jpg');">
+        <div class="hint">
+          <h2>Hollow Knight</h2>
+          <p>Happy Christmas!</p>
+        </div>
+      </div>
+    </a>
+    <a href="#id03">
+      <div class="img" style="background-image: url('asset/tmp3.jpg');">
+        <div class="hint">
+          <h2>To the Moon</h2>
+          <p>Happy Halloween!</p>
+        </div>
+      </div>
+    </a>
+    <a href="#id04">
+      <div class="img" style="background-image: url('asset/tmp4.jpg');">
+        <div class="hint">
+          <h2>To the Moon</h2>
+          <p>sleepy eva~</p>
+        </div>
+      </div>
+    </a>
+    
+  </div>
+
+  <div id="id01" class="album" >
+    <a href="#" >
+      <img src="asset/close.png" class="close" />
+    </a>
+    <div class="gallery" >
+      <img src="asset/tmp.jpg" class="image" />
     </div>
+    <div class="image-info">
+      <h2>One Shot</h2>
+      <p>Nico!!</p>
+      <a href="#id03" >
+        <img src="asset/back.png" class="back" >
+      </a>
+      <a href="#id02" >
+        <img src="asset/next.png" class="next" />
+      </a>
+    </div>
+  </div>
+
+  <div id="id02" class="album" >
+    <a href="#" >
+      <img src="asset/close.png" class="close" />
+    </a>
+    <div class="gallery" >
+      <img src="asset/tmp2.jpg" class="image" />
+    </div>
+    <div class="image-info">
+      <h2>Hollow Knight</h2>
+      <p>Happy Christmas!</p>
+      <a href="#id01" >
+        <img src="asset/back.png" class="back" >
+      </a>
+      <a href="#id03" >
+        <img src="asset/next.png" class="next" />
+      </a>
+    </div>
+  </div>
+
+  <div id="id03" class="album" >
+    <a href="#" >
+      <img src="asset/close.png" class="close" />
+    </a>
+    <div class="gallery" >
+      <img src="asset/tmp3.jpg" class="image" />
+    </div>
+    <div class="image-info">
+      <h2>To the Moon</h2>
+      <p>Happy Halloween!</p>
+      <a href="#id02" >
+        <img src="asset/back.png" class="back" >
+      </a>
+      <a href="#id04" >
+        <img src="asset/next.png" class="next" />
+      </a>
+    </div>
+  </div>
+
+  <div id="id04" class="album" >
+    <a href="#" >
+      <img src="asset/close.png" class="close" />
+    </a>
+    <div class="gallery" >
+      <img src="asset/tmp4.jpg" class="image" />
+    </div>
+    <div class="image-info">
+      <h2>To the Moon</h2>
+      <p>sleepy eva~</p>
+      <a href="#id03" >
+        <img src="asset/back.png" class="back" >
+      </a>
+      <a href="#id01" >
+        <img src="asset/next.png" class="next" />
+      </a>
+    </div>
+  </div>
+
 </body>
 </html>

@@ -12,12 +12,11 @@ an easy 8-sliding puzzle game with a gallery based on pure js, fulfilling aStar 
     - [x] 多点击作弊彩蛋
     - [x] aStar 自动拼图
     - [ ] 计时计分
-- [ ] 画廊实现
-    - [ ] 展示系统
-        - [ ] 离散式布局
-        - [ ] hover 细节提示
+- [x] 画廊实现
+    - [x] 展示系统
+        - [x] 离散式布局
+        - [x] hover 细节提示
     - [ ] 收集系统
 - [ ] 界面优化
     - [ ] 将成功弹窗修改为渐变式弹窗
     - [ ] 标题栏添加计时系统
-- [ ] ???（waiting...）
