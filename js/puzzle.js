@@ -1,7 +1,6 @@
 (function() {
     class puzzle {
         constructor() {
-            // 修改成可视化的图片列表选项
             this.background = [
                 "asset/tmp.jpg",
                 "asset/tmp2.jpg",
@@ -20,16 +19,19 @@
             this.btn = {
                 changeImg: document.getElementById("change"),
                 shuffle: document.getElementById("shuffle"),
-                showNum: document.getElementById("showNum"),
+                hideImage: document.getElementById("hideImage"),
                 hint: document.getElementById("hint"),
                 again: document.getElementById("successB")
             };
+
+            this.isAStar = true;
+            this.showImage = document.getElementById("imgHint");
             this.sus_img = document.getElementById("sus_img");
             this.img_ = 0; //当前图片序号
             this.step = 0; //记录步数
             this.nowOrder = shuffle([0, 1, 2, 3, 4, 5, 6, 7, 8]); //当前块排序
             this.distanceCount = 0;
-            this.isShowOrder = 'ShowNum';
+            this.isShowOrder = 'HideImage';
             
             this.init();
             this.bind();
@@ -38,7 +40,7 @@
         // 分割图片，位置初始化
         init() {
             var _this = this;
-
+        
             Array.prototype.forEach.call(this.block, function (ele, i) {
                 let po = _this.nowOrder.indexOf(i);
                 let y = Math.floor(po / 3);
@@ -46,13 +48,13 @@
                 ele.style.left = x * 100 + "px";
                 ele.style.top = y * 100 + "px";
             });
-            
+        
             _this.stepCnt.innerHTML = _this.step;
-
+            
             console.info(calcManhanttanDistance(_this.nowOrder));
         }
 
-        // 可移动条件修正
+        // 可移动条件
         moveable(i, j) {
            let realCol = j % 3;
            let realRow = Math.floor(j / 3);
@@ -66,7 +68,7 @@
             //block
             Array.prototype.forEach.call(this.block, function (ele, i) {
                 ele.onclick = function () {
-                    // 与空方块相邻，可移动，这个又得重写可移动条件，写好了233
+                    // 与空方块相邻，可移动
                     let blankIndex = _this.nowOrder.indexOf(8);
                     let tmpIndex = _this.nowOrder.indexOf(i);
                     if (moveDis(tmpIndex, blankIndex) == 1) {
@@ -107,20 +109,28 @@
                 _this.block[8].style.opacity = "0";
             };
             
-            this.btn.showNum.onclick = function () {
-                if (_this.isShowOrder == 'ShowNum') {
+            this.btn.hideImage.onclick = function () {
+                if (_this.isShowOrder == 'HideImage') {
+                    _this.showImage.style.display = "none";
+                    _this.isShowOrder = 'ShowNum';
+                }
+                else if (_this.isShowOrder == 'ShowNum') {
                     Array.prototype.forEach.call(_this.order, function (ele, i) {
                         ele.style.display = "block";
                     });
                     _this.isShowOrder = 'HideNum';
                 }
-                else {
+                else if (_this.isShowOrder == 'HideNum') {
                     Array.prototype.forEach.call(_this.order, function (ele, i) {
                         ele.style.display = "none";
                     });
-                    _this.isShowOrder = 'ShowNum';
+                    _this.isShowOrder = 'ShowImage';
                 }
-                _this.btn.showNum.innerHTML = _this.isShowOrder;
+                else {
+                    _this.showImage.style.display = "block";
+                    _this.isShowOrder = 'HideImage';
+                }
+                _this.btn.hideImage.innerHTML = _this.isShowOrder;
             };
 
             this.btn.changeImg.onclick = function () {
@@ -132,21 +142,25 @@
                     ele.style.backgroundImage = "url(" + _this.background[_this.img_] + ")";
                 });
                 
+                _this.showImage.style.backgroundImage = "url(" + _this.background[_this.img_] + ")";
                 _this.sus_img.style.backgroundImage = "url(" + _this.background[_this.img_] + ")";
-
+            
                 _this.nowOrder = shuffle([0, 1, 2, 3, 4, 5, 6, 7, 8]);
                 _this.step = 0;
                 _this.init();
-
+            
             };
             //A*
             this.btn.hint.onclick = function () {
-                _this.aStar();
+                if(_this.isAStar == true){
+                    _this.aStar();
+                }
             };
         }
 
-        // A*，需要设计一个防止执行成功前多次点击触发的策略
+        // A*，锁变量 isAStar 防止执行成功前多次点击触发
         aStar() {
+            this.isAStar = false;
             var puzzle = this.nowOrder;
             startTime = new Date();
             aStarSearch(puzzle);
@@ -155,7 +169,7 @@
             console.info(path.length);
             console.info("233");
             var len = path.length - 2;
-
+        
             var timer = setInterval(() => {
                 if (len < 0 ) { clearInterval(timer); }
                 this.nowOrder = path[len--];
@@ -165,9 +179,9 @@
                     clearInterval(timer);
                     this.successShow();
                     initParam();
+                    this.isAStar = true;
                 }
             }, 300);
-
         }
 
         //成功

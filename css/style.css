@@ -26,6 +26,16 @@ body {
   outline: 5px solid rgb(175, 175, 175);
 }
 
+#imgHint {
+  display: block;
+  width: 300px;
+  height: 300px;
+  position: relative;
+  margin: 30px auto;
+  outline: 7px solid rgb(175, 175, 175);
+  background-image: url("../asset/tmp.jpg");
+}
+
 #main .hint{
   width: 300px;
   height: 300px;
@@ -152,7 +162,7 @@ button:active{
   margin: 20px auto;
   width: 300px;
   height: 300px;
-  border: 20px solid rgb(238, 186, 186);
+  border: 15px solid rgb(238, 186, 186);
   transition: all .5s;
 }
 
