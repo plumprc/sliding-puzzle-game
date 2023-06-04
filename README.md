@@ -1,14 +1,7 @@
 # sliding-puzzle-game
-an easy 8-sliding puzzle game with a gallery based on pure js, fulfilling aStar algorithm
+An easy 8-sliding puzzle game with a gallery based on pure js, fulfilling aStar algorithm. See more implementation details in `puzzle.js` and `aStar.js`.
+* **Start**: open `index.html` in your browser
+* **Hint**: click `Hint: A*` to automatically complete the puzzle via A* search algorithm
+* **Cheat**: click on the blank block in the puzzle seven times for a surprise~
 
-## Procedure
-- [x] 界面设计
-    - [x] 标题栏
-    - [x] 拼图主体
-    - [x] 预览图
-    - [x] 功能入口按键
-- [x] 拼图逻辑
-    - [x] 可移动逻辑
-    - [x] 多点击作弊彩蛋
-    - [x] A* 自动拼图
-- [x] 画廊展示
+![puzzle](asset/puzzle.gif)

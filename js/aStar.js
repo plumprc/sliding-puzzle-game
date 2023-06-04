@@ -23,7 +23,7 @@ function initParam() {
     path = [];
 }
 
-// 逆序数奇偶性
+// Inversion number
 function checkSolvable(state) {
   var pos = state.indexOf(8);
   var _state = state.slice();
@@ -39,7 +39,7 @@ function checkSolvable(state) {
   return (count & 1) === 0;
 }
 
-// 确保打乱后的拼图一定有解
+// the puzzle is solvable when its inversion number is even
 function shuffle(state) {
   var _state = state.slice();
   shuffle_arr(_state);
@@ -136,7 +136,7 @@ function moveDis(i, j) {
     return (Math.abs(realCol - col) + Math.abs(realRow - row));
 }
 
-// h(x)，曼哈顿距离，一定小于真实步长，可以收敛
+// h(x)，Manhanttan Distance (less than actual moving steps)
 function calcManhanttanDistance(state) {
     let totalDist = 0;
     for (let i = 0; i < state.length - 1; i++) {
@@ -161,6 +161,7 @@ function collateSteps(state) {
   collateSteps(state.prev);
 }
 
+// A* searching (with Heap-based optimizer) https://en.wikipedia.org/wiki/A*_search_algorithm
 function aStarSearch(state) {
   state.levels = 0;
   state.prev = null;
